@@ -1,0 +1,52 @@
+**********************To Find the max sum of rows and coloumns.**************
+
+#include<bits/stdc++.h>
+
+void findLargest(int **a, int m, int n)
+{
+    int sum_row,sum_col,max_col,max_row,k=0,t=0;
+    
+    max_col = INT_MIN;
+    for(int i=0;i<m;i++)
+    {
+        sum_col=0;
+        for(int j=0;j<n;j++)
+        {
+            sum_col+=a[i][j];
+            if(sum_col > max_col)
+            {
+                max_col = sum_col;
+                k = j;
+            }
+        }
+    }
+    
+    
+    max_row = INT_MIN;
+    for(int j=0;j<n;j++)
+    {
+        sum_row=0;
+        for(int i=0;i<m;i++)
+        {
+            sum_row+=a[i][j];
+            if(sum_row > max_row)
+            {
+                 max_row = sum_row;
+                 t = i;
+            }
+               
+        }
+    }
+    
+    if(max_col > max_row)
+        cout<<"column "<<k<<" "<<max_col;
+    else
+        cout<<"row "<<t<<" "<<max_row;
+    
+    
+    
+    
+}
+
+
+LINK - https://classroom.codingninjas.com/app/classroom/me/10006/content/165860/offering/2049333/problem/986
